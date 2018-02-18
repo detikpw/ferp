@@ -21,42 +21,46 @@ const Homepage = ({ users }) => (
       </Table.Header>
 
       <Table.Body>
-        {users.map(user => (
-          <Table.Row>
-            <Table.Cell>
-              {user.id}
-            </Table.Cell>
-            <Table.Cell>
-              <TableContent>
-                {user.name}
-              </TableContent>
-            </Table.Cell>
-            <Table.Cell>
-              <TableContent>
-                {user.username}
-              </TableContent>
-            </Table.Cell>
-            <Table.Cell>
-              <TableContent>
-                {user.email}
-              </TableContent>
-            </Table.Cell>
-            <Table.Cell>
-              <TableContent>
-                {user.phone}
-              </TableContent>
-            </Table.Cell>
-            <Table.Cell>
-              <TableContent link={`http://www.${user.website}`}>
-                {user.website}
-              </TableContent>
-            </Table.Cell>
-            <Table.Cell>
-              <TableContent>
-                {user.company.name}
-              </TableContent>
-            </Table.Cell>
-          </Table.Row>
+        {users.map(({
+ id, name, username, email, phone, website, company,
+}) => (
+  <Table.Row key={id}>
+    <Table.Cell>
+      <TableContent>
+        {id}
+      </TableContent>
+    </Table.Cell>
+    <Table.Cell>
+      <TableContent>
+        {name}
+      </TableContent>
+    </Table.Cell>
+    <Table.Cell>
+      <TableContent>
+        {username}
+      </TableContent>
+    </Table.Cell>
+    <Table.Cell>
+      <TableContent>
+        {email}
+      </TableContent>
+    </Table.Cell>
+    <Table.Cell>
+      <TableContent>
+        {phone}
+      </TableContent>
+    </Table.Cell>
+    <Table.Cell>
+      <TableContent link={`http://www.${website}`}>
+        {website}
+      </TableContent>
+    </Table.Cell>
+    <Table.Cell>
+      <TableContent>
+        {company.name}
+      </TableContent>
+    </Table.Cell>
+  </Table.Row>
         ))}
       </Table.Body>
     </Table>
