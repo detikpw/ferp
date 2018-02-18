@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Header } from 'semantic-ui-react';
-import { pipe } from 'ramda';
-import { isNumber } from '../../lib/type';
+import { either, pipe } from 'ramda';
+import { isNumber, isString } from '../../lib/type';
 
 const wrapLink = link => (label) => {
   if (link) {
@@ -29,8 +29,11 @@ const wrapContent = (content) => {
   );
 };
 
-export default ({ link, children }) => pipe(
-  wrapLabel,
-  wrapLink(link),
-  wrapContent,
-)(children);
+export default ({ link, children }) => {
+  if (!either(isNumber, isString)(children)) return children;
+  return pipe(
+    wrapLabel,
+    wrapLink(link),
+    wrapContent,
+  )(children);
+};
