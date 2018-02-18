@@ -1,0 +1,18 @@
+{
+    "settings": {
+      "import/core-modules": ["react", "React"]
+    },
+    "rules": {
+      "import/extensions" : ["error", { "jsx": "never" } ],
+      "react/prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "jsx-a11y/anchor-is-valid": [ "error", {
+        "specialLink": [ "to"]
+      }],
+      "react/jsx-curly-brace-presence": [2, { "props": "ignore", "children": "ignore" }]
+    },
+    "globals": {
+        "React": false
+    },
+    "extends": "airbnb"
+  }
