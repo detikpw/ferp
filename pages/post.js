@@ -1,17 +1,18 @@
-import { Comment, Header, Segment } from 'semantic-ui-react';
+import { Comment, Header } from 'semantic-ui-react';
 import URI from 'urijs';
 import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
+import Paper from '../components/containers/Paper';
 import fetch from '../lib/fetch';
 import { DEFAULT_AVATAR } from '../constants/site-config';
 
 const Post = ({ comments, post, user }) => (
   <Layout>
-    <Segment raised>
+    <Paper>
       <PageHeader icon="sticky note">{post.title} by {user.name}</PageHeader>
       {post.body}
-    </Segment>
-    <Segment raised>
+    </Paper>
+    <Paper>
       <Comment.Group>
         <Header as="h3" dividing>Comments</Header>
         { comments.map(({
@@ -34,7 +35,7 @@ const Post = ({ comments, post, user }) => (
           </Comment>
         ))}
       </Comment.Group>
-    </Segment>
+    </Paper>
   </Layout>
 );
 
