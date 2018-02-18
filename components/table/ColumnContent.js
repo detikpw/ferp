@@ -14,7 +14,6 @@ const wrapLink = link => (label) => {
   return label;
 };
 
-
 const wrapLabel = (label) => {
   if (isNumber(label)) return label;
   return (<Header.Content>{label}</Header.Content>);
