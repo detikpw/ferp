@@ -1,8 +1,8 @@
-import { Header } from 'semantic-ui-react';
+import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
 
 export default () => (
   <Layout>
-    <Header>Hello</Header>
+    <PageHeader icon="users">Users</PageHeader>
   </Layout>
 );
