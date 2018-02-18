@@ -3,6 +3,7 @@ import URI from 'urijs';
 import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
 import TableContent from '../components/table/ColumnContent';
+import LinkButton from '../components/link/Button';
 import fetch from '../lib/fetch';
 
 const Posts = ({ posts, user }) => (
@@ -14,6 +15,7 @@ const Posts = ({ posts, user }) => (
           <Table.HeaderCell>ID</Table.HeaderCell>
           <Table.HeaderCell>Title</Table.HeaderCell>
           <Table.HeaderCell>Body</Table.HeaderCell>
+          <Table.HeaderCell>Action</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
@@ -37,6 +39,17 @@ const Posts = ({ posts, user }) => (
             <Table.Cell>
               <TableContent>
                 {body}
+              </TableContent>
+            </Table.Cell>
+            <Table.Cell>
+              <TableContent>
+                <LinkButton
+                  alias={`/posts/${id}`}
+                  href={{ pathname: '/post', query: { id } }}
+                  color="green"
+                >
+                  See Post
+                </LinkButton>
               </TableContent>
             </Table.Cell>
           </Table.Row>
