@@ -1,7 +1,7 @@
-import { Table, Header } from 'semantic-ui-react';
-import Link from 'next/link';
+import { Table } from 'semantic-ui-react';
 import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
+import TableContent from '../components/table/ColumnContent';
 import fetch from '../lib/fetch';
 
 const Homepage = ({ users }) => (
@@ -27,46 +27,34 @@ const Homepage = ({ users }) => (
               {user.id}
             </Table.Cell>
             <Table.Cell>
-              <Header as="h4">
-                <Header.Content>
-                  {user.name}
-                </Header.Content>
-              </Header>
+              <TableContent>
+                {user.name}
+              </TableContent>
             </Table.Cell>
             <Table.Cell>
-              <Header as="h4">
-                <Header.Content>
-                  {user.username}
-                </Header.Content>
-              </Header>
+              <TableContent>
+                {user.username}
+              </TableContent>
             </Table.Cell>
             <Table.Cell>
-              <Header as="h4">
-                <Header.Content>
-                  {user.email}
-                </Header.Content>
-              </Header>
+              <TableContent>
+                {user.email}
+              </TableContent>
             </Table.Cell>
             <Table.Cell>
-              <Header as="h4">
-                <Header.Content>
-                  {user.phone}
-                </Header.Content>
-              </Header>
+              <TableContent>
+                {user.phone}
+              </TableContent>
             </Table.Cell>
             <Table.Cell>
-              <Header as="h4">
-                <Link href={`http://www.${user.website}`}>
-                  <a><Header.Content>{user.website}</Header.Content></a>
-                </Link>
-              </Header>
+              <TableContent link={`http://www.${user.website}`}>
+                {user.website}
+              </TableContent>
             </Table.Cell>
             <Table.Cell>
-              <Header as="h4">
-                <Header.Content>
-                  {user.company.name}
-                </Header.Content>
-              </Header>
+              <TableContent>
+                {user.company.name}
+              </TableContent>
             </Table.Cell>
           </Table.Row>
         ))}
