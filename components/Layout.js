@@ -3,7 +3,7 @@ import { Container, Grid } from 'semantic-ui-react';
 import MainNav from './MainNav';
 
 export default ({ children }) => (
-  <div>
+  <React.Fragment>
     <Head>
       <link
         rel="stylesheet"
@@ -22,5 +22,5 @@ export default ({ children }) => (
         </Grid.Row>
       </Grid>
     </Container>
-  </div>
+  </React.Fragment>
 );
