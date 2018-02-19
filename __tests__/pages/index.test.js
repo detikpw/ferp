@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-import { USERS } from '../dummy-data';
+import { USERS } from '../../constants/dummy-data';
 
 import Homepage from '../../pages/index.js';
 import ColumnContent from '../../components/table/ColumnContent';
@@ -26,16 +26,22 @@ describe('Homepage', () => {
       expect(tableRows).toHaveLength(USERS.length);
     });
     it('Show id for each user', () => {
-      expect(tableRows.map(row => row.find(ColumnContent).first().children().text())).toEqual(USERS.map(({ id }) => id.toString()));
+      expect(tableRows.map(row =>
+        row.find(ColumnContent).first().children().text()))
+        .toEqual(USERS.map(({ id }) => id.toString()));
     });
     it('Show name for each user', () => {
-      expect(tableRows.map(row => row.find(ColumnContent).at(1).children().text())).toEqual(USERS.map(({ name }) => name));
+      expect(tableRows.map(row =>
+        row.find(ColumnContent).at(1).children().text())).toEqual(USERS.map(({ name }) => name));
     });
     it('Show username for each user', () => {
-      expect(tableRows.map(row => row.find(ColumnContent).at(2).children().text())).toEqual(USERS.map(({ username }) => username));
+      expect(tableRows.map(row =>
+        row.find(ColumnContent).at(2).children().text()))
+        .toEqual(USERS.map(({ username }) => username));
     });
     it('Show email for each user', () => {
-      expect(tableRows.map(row => row.find(ColumnContent).at(3).children().text())).toEqual(USERS.map(({ email }) => email));
+      expect(tableRows.map(row =>
+        row.find(ColumnContent).at(3).children().text())).toEqual(USERS.map(({ email }) => email));
     });
   });
 });
