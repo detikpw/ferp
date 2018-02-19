@@ -1,5 +1,6 @@
 
 import { Menu } from 'semantic-ui-react';
+import LinkMenuItem from './link/MenuItem';
 
 export default () => (
   <Menu
@@ -7,8 +8,7 @@ export default () => (
     inverted
     vertical
   >
-    <Menu.Item name="home" active />
-    <Menu.Item name="users" />
+    <LinkMenuItem name="home" href="/" active />
     <Menu.Item name="" />
   </Menu>
 );
