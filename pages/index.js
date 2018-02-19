@@ -70,13 +70,15 @@ const Homepage = ({ users }) => (
               </TableContent>
             </Table.Cell>
             <Table.Cell>
-              <LinkButton href={new URI('/posts').addSearch({ userId: id }).toString()} color="green">
-                {"User's Posts"}
-              </LinkButton>
-              <Divider horizontal />
-              <LinkButton href={new URI('/albums').addSearch({ userId: id }).toString()} color="green">
-                {"User's Albums"}
-              </LinkButton>
+              <TableContent>
+                <LinkButton href={new URI('/posts').addSearch({ userId: id }).toString()} color="green">
+                  {"User's Posts"}
+                </LinkButton>
+                <Divider horizontal />
+                <LinkButton href={new URI('/albums').addSearch({ userId: id }).toString()} color="green">
+                  {"User's Albums"}
+                </LinkButton>
+              </TableContent>
             </Table.Cell>
           </Table.Row>
         ))}
