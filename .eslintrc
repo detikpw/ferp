@@ -8,11 +8,14 @@
       "react/jsx-filename-extension": 0,
       "jsx-a11y/anchor-is-valid": 0,
       "react/jsx-curly-brace-presence": [2, { "props": "ignore", "children": "ignore" }],
-      "react/jsx-no-undef": [2, { "allowGlobals": true }]
-
+      "react/jsx-no-undef": [2, { "allowGlobals": true }],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.setup.js"]}]
     },
     "globals": {
-        "React": false
+        "React": false,
+        "describe": false,
+        "it": false,
+        "expect": false
     },
     "extends": "airbnb"
   }
