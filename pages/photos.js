@@ -10,7 +10,7 @@ const Photos = ({ album, photos }) => (
     <PageHeader icon="photo">{album.title}</PageHeader>
     <Image.Group size="tiny">
       {photos.map(({ id, thumbnailUrl }) => (
-        <Link href={{ pathname: 'photo', query: { id } }} key={id}>
+        <Link as={`photos/${id}`} href={{ pathname: 'photo', query: { id } }} key={id}>
           <a><Image src={thumbnailUrl} /></a>
         </Link>
       ))}

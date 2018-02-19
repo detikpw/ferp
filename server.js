@@ -15,6 +15,12 @@ app.prepare()
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get('/photos/:id', (req, res) => {
+      const actualPage = '/photo';
+      const queryParams = { id: req.params.id };
+      app.render(req, res, actualPage, queryParams);
+    });
+
     server.get('*', (req, res) => handle(req, res));
 
     server.listen(3000, (err) => {

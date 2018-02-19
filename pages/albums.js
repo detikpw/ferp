@@ -3,16 +3,18 @@ import URI from 'urijs';
 import PageHeader from '../components/PageHeader';
 import Layout from '../components/Layout';
 import TableContent from '../components/table/ColumnContent';
+import LinkButton from '../components/link/Button';
 import fetch from '../lib/fetch';
 
 const Posts = ({ albums, user }) => (
   <Layout>
-    <PageHeader icon="sticky note">Posts by {user.name}</PageHeader>
+    <PageHeader icon="sticky note">Albums by {user.name}</PageHeader>
     <Table basic="very" striped celled collapsing>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>ID</Table.HeaderCell>
           <Table.HeaderCell>Title</Table.HeaderCell>
+          <Table.HeaderCell>Action</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
@@ -30,6 +32,13 @@ const Posts = ({ albums, user }) => (
             <Table.Cell>
               <TableContent>
                 {title}
+              </TableContent>
+            </Table.Cell>
+            <Table.Cell>
+              <TableContent>
+                <LinkButton href={new URI('/photos').addSearch({ albumId: id }).toString()} color="green">
+                  See Photos
+                </LinkButton>
               </TableContent>
             </Table.Cell>
           </Table.Row>
